@@ -27,5 +27,8 @@ package it.bob.apps.android.cultactive.beans.authors;
 /**
  * Created by roberto on 16/06/15.
  */
-public class BeanAuthorSingle {
+@DatabaseT
+public class BeanAuthorSingle extends BeanAuthor
+{
+
 }

@@ -24,8 +24,20 @@
 
 package it.bob.apps.android.cultactive.beans.authors;
 
+import it.bob.apps.android.cultactive.beans.base.BaseCABean;
+
 /**
  * Created by roberto on 16/06/15.
  */
-public class BeanAuthor {
+public abstract class BeanAuthor extends BaseCABean
+{
+    private String authorName;
+
+    public String getAuthorName() {
+        return authorName;
+    }
+
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
+    }
 }
