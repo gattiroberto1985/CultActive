@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/CultActive.iml" filepath="$PROJECT_DIR$/CultActive.iml" />
+      <module fileurl="file://$PROJECT_DIR$/CultActive/CultActive-CultActive.iml" filepath="$PROJECT_DIR$/CultActive/CultActive-CultActive.iml" />
+    </modules>
+  </component>
+</project>
+
