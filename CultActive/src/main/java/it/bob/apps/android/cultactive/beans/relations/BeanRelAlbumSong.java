@@ -26,5 +26,5 @@ package it.bob.apps.android.cultactive.beans.relations;
 /**
  * Created by roberto on 16/06/15.
  */
-public class BeanAuthorOpera {
+public class BeanRelAlbumSong {
 }

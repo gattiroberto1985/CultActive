@@ -24,11 +24,39 @@
 
 package it.bob.apps.android.cultactive.beans.authors;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+import it.bob.apps.android.cultactive.utils.CAConstants;
+
 /**
  * Created by roberto on 16/06/15.
  */
-@DatabaseT
+@DatabaseTable( tableName = CAConstants.DB_TABLE_NAME_AUTHOR_SINGLES )
 public class BeanAuthorSingle extends BeanAuthor
 {
+
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_SINGLE_AUTHOR_NAME)
+    private String name;
+
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_SINGLE_AUTHOR_SURNAME)
+    private String surname;
+
+    /* ********************************************************************* */
+    /*                             CONSTRUCTORS                              */
+    /* ********************************************************************* */
+
+    public BeanAuthorSingle() { }
+
+    /* ********************************************************************* */
+    /*                       GETTER AND SETTER METHODS                       */
+    /* ********************************************************************* */
+
+    public String getName() { return name; }
+
+    public void setName(String name) { this.name = name; }
+
+    public String getSurname() { return surname; }
+
+    public void setSurname(String surname) { this.surname = surname; }
 
 }

@@ -24,10 +24,12 @@
 
 package it.bob.apps.android.cultactive.beans.base;
 
+import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
 import it.bob.apps.android.cultactive.utils.CAConstants;
 
 import java.io.Serializable;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -37,7 +39,7 @@ public class BaseCABean implements Serializable
 {
 
     @DatabaseField( generatedId = true, columnName = CAConstants.DB_TABLE_COL_DEFAULT_ID)
-    private int id;
+    protected int id;
 
     /* ********************************************************************* */
     /*                             CONSTRUCTORS                              */

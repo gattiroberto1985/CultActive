@@ -24,14 +24,47 @@
 
 package it.bob.apps.android.cultactive.beans.authors;
 
+import com.j256.ormlite.field.DatabaseField;
 import it.bob.apps.android.cultactive.beans.base.BaseCABean;
+import it.bob.apps.android.cultactive.beans.operas.BeanOpera;
+import it.bob.apps.android.cultactive.utils.CAConstants;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * Created by roberto on 16/06/15.
  */
 public abstract class BeanAuthor extends BaseCABean
 {
+
+    @DatabaseField( columnName = CAConstants.DB_TABLE_COL_DEFAULT_ID, generatedIdSequence = CAConstants.DB_SEQUENCE_NAME_AUTHOR)
+    private int id;
+
+    private char authorType;
+
     private String authorName;
+
+    /* ********************************************************************* */
+    /*                            CLASS METHODS                              */
+    /* ********************************************************************* */
+
+    public Collection<BeanOpera> getOperas()
+    {
+        Collection<BeanOpera> operas = new ArrayList<BeanOpera>();
+
+        return operas;
+    }
+
+    /* ********************************************************************* */
+    /*                             CONSTRUCTORS                              */
+    /* ********************************************************************* */
+
+    public BeanAuthor() { }
+
+    /* ********************************************************************* */
+    /*                       GETTER AND SETTER METHODS                       */
+    /* ********************************************************************* */
 
     public String getAuthorName() {
         return authorName;
@@ -40,4 +73,14 @@ public abstract class BeanAuthor extends BaseCABean
     public void setAuthorName(String authorName) {
         this.authorName = authorName;
     }
+
+    public char getAuthorType() { return authorType; }
+
+    public void setAuthorType(char authorType) { this.authorType = authorType; }
+
+    @Override
+    public int getId() { return id; }
+
+    @Override
+    public void setId(int id) { this.id = id; }
 }

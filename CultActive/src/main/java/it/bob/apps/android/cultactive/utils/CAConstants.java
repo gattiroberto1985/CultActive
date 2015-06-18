@@ -47,13 +47,34 @@ public class CAConstants
         BEAN_FILM
     }
 
+    /* ********************************************************************* */
+    /*                             DEFAULT VALUES                            */
+    /* ********************************************************************* */
+
+    // integer default value
+    public static final int DEFAULT_INT_VALUE = -1;
+    // string default value
+    public static final String DEFAULT_STRING_VALUE = "";
+    // char default value
+    public static final char DEFAULT_CHAR_VALUE = 'x';
+
 
     /* ********************************************************************* */
     /*                          DATABASE CONSTANTS                           */
     /* ********************************************************************* */
 
     // names of the tables
-    public static final String DB_TABLE_NAME_NOTES = "ca_notes";
+    public static final String DB_TABLE_NAME_NOTES                  = "ca_notes";
+    public static final String DB_TABLE_NAME_AUTHOR_SINGLES         = "ca_authors";
+    public static final String DB_TABLE_NAME_AUTHOR_GROUPS          = "ca_groups";
+    public static final String DB_TABLE_NAME_AUTHOR_GROUPS_RELATION = "ca_group_author";
+    public static final String DB_TABLE_NAME_OPERA_FILMS            = "ca_films";
+    public static final String DB_TABLE_NAME_OPERA_ARTICLES         = "ca_articles";
+    public static final String DB_TABLE_NAME_OPERA_MUSIC_SONGS      = "ca_music_songs";
+    public static final String DB_TABLE_NAME_OPERA_MUSIC_ALBUMS     = "ca_music_albums";
+
+    // names of the sequences
+    public static final String DB_SEQUENCE_NAME_AUTHOR = "seq_author";
 
     // tables' definitions
 
@@ -61,8 +82,18 @@ public class CAConstants
     public static final String DB_TABLE_COL_DEFAULT_ID = "_id";
 
     // Notes table
-    public static final String DB_TABLE_COL_NOTES_TEXT = "note_text";
+    public static final String DB_TABLE_COL_NOTES_TEXT      = "note_text";
     public static final String DB_TABLE_COL_NOTES_BEAN_TYPE = "bean_type";
     public static final String DB_TABLE_COL_NOTES_BEAN_ID   = "bean_id";
 
+    // Single Author table
+    public static final String DB_TABLE_COL_SINGLE_AUTHOR_NAME    = "auth_name";
+    public static final String DB_TABLE_COL_SINGLE_AUTHOR_SURNAME = "auth_surname";
+
+    // Group author table
+    public static final String DB_TABLE_COL_GROUP_AUTHOR_YEAR_BORN = "group_year_born";
+
+    // Group-author relation
+    public static final String DB_TABLE_COL_R_AUTH_GROUP_ID_GROUP  = "group_id";
+    public static final String DB_TABLE_COL_R_AUTH_GROUP_ID_AUTHOR = "author_id";
 }

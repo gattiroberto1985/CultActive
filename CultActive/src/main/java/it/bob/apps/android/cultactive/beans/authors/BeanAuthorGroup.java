@@ -24,10 +24,53 @@
 
 package it.bob.apps.android.cultactive.beans.authors;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+import it.bob.apps.android.cultactive.utils.CAConstants;
+
+import java.util.ArrayList;
+import java.util.Collection;
+
 /**
  * Created by roberto on 16/06/15.
  */
+@DatabaseTable( tableName = CAConstants.DB_TABLE_NAME_AUTHOR_GROUPS )
 public class BeanAuthorGroup extends BeanAuthor
 {
+
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_GROUP_AUTHOR_YEAR_BORN)
+    private int yearBorn = CAConstants.DEFAULT_INT_VALUE;
+
+    /* ********************************************************************* */
+    /*                            CLASS METHODS                              */
+    /* ********************************************************************* */
+
+    /**
+     * The methods retrieves the members of the group via the
+     * {@see it.bob.apps.android.cultactive.beans.relations.BeanRelAuthorGroup}.
+     *
+     * @return
+     */
+    public Collection<BeanAuthorSingle> retrieveMembers()
+    {
+        Collection<BeanAuthorSingle> members = new ArrayList<BeanAuthorSingle>();
+
+        return members;
+    }
+
+    /* ********************************************************************* */
+    /*                             CONSTRUCTORS                              */
+    /* ********************************************************************* */
+
+    public BeanAuthorGroup() { }
+
+
+    /* ********************************************************************* */
+    /*                       GETTER AND SETTER METHODS                       */
+    /* ********************************************************************* */
+
+    public int getYearBorn() { return yearBorn; }
+
+    public void setYearBorn(int yearBorn) { this.yearBorn = yearBorn; }
 
 }
