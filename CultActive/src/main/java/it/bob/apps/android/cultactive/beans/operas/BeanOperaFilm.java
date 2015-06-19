@@ -23,8 +23,28 @@
  */
 package it.bob.apps.android.cultactive.beans.operas;
 
+import com.j256.ormlite.table.DatabaseTable;
+import it.bob.apps.android.cultactive.utils.CAConstants;
+
 /**
  * Created by roberto on 16/06/15.
  */
-public class BeanOperaFilm {
+@DatabaseTable( tableName = CAConstants.DB_TABLE_NAME_OPERA_FILMS )
+public class BeanOperaFilm extends BeanOpera
+{
+
+    /* ********************************************************************* */
+    /*                             CONSTRUCTORS                              */
+    /* ********************************************************************* */
+
+    public BeanOperaFilm(String title, int rate)
+    {
+        super(title, CAConstants.OPERA_TYPES.OPERA_FILM, rate);
+    }
+
+
+    /* ********************************************************************* */
+    /*                       GETTER AND SETTER METHODS                       */
+    /* ********************************************************************* */
+
 }

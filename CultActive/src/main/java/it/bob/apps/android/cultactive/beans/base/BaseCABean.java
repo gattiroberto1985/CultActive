@@ -26,9 +26,11 @@ package it.bob.apps.android.cultactive.beans.base;
 
 import com.j256.ormlite.dao.ForeignCollection;
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.field.ForeignCollectionField;
 import it.bob.apps.android.cultactive.utils.CAConstants;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -40,6 +42,9 @@ public class BaseCABean implements Serializable
 
     @DatabaseField( generatedId = true, columnName = CAConstants.DB_TABLE_COL_DEFAULT_ID)
     protected int id;
+
+    @ForeignCollectionField
+    private Collection<BeanNote> notes = new ArrayList<BeanNote>();
 
     /* ********************************************************************* */
     /*                             CONSTRUCTORS                              */
@@ -60,4 +65,11 @@ public class BaseCABean implements Serializable
         this.id = id;
     }
 
+    public Collection<BeanNote> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(Collection<BeanNote> notes) {
+        this.notes = notes;
+    }
 }

@@ -23,8 +23,54 @@
  */
 package it.bob.apps.android.cultactive.beans.relations;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+import it.bob.apps.android.cultactive.beans.authors.BeanAuthor;
+import it.bob.apps.android.cultactive.beans.base.BaseCABean;
+import it.bob.apps.android.cultactive.beans.operas.BeanOpera;
+import it.bob.apps.android.cultactive.utils.CAConstants;
+
 /**
  * Created by roberto on 16/06/15.
  */
-public class BeanRelAuthorOpera {
+@DatabaseTable(tableName = CAConstants.DB_TABLE_NAME_AUTHOR_OPERAS_RELATION )
+public class BeanRelAuthorOpera extends BaseCABean
+{
+
+    @DatabaseField( columnName = CAConstants.DB_TABLE_COL_DEFAULT_ID, generatedIdSequence = CAConstants.DB_SEQUENCE_NAME_REL_AUTH_OPERA)
+    private int id;
+
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_R_AUTH_OPERA_ID_AUTH, foreign = true, foreignAutoRefresh = true)
+    private BeanAuthor author;
+
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_R_AUTH_OPERA_ID_OPERA, foreign = true, foreignAutoRefresh = true)
+    private BeanOpera opera;
+
+    /* ********************************************************************* */
+    /*                             CONSTRUCTORS                              */
+    /* ********************************************************************* */
+
+    public BeanRelAuthorOpera() { }
+
+    /* ********************************************************************* */
+    /*                       GETTER AND SETTER METHODS                       */
+    /* ********************************************************************* */
+
+    public BeanOpera getGroup() { return this.opera; }
+
+    public void setGroup(BeanOpera group) { this.opera = opera; }
+
+    public BeanAuthor getAuthor() { return author; }
+
+    public void setAuthor(BeanAuthor author) { this.author = author; }
+
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
 }

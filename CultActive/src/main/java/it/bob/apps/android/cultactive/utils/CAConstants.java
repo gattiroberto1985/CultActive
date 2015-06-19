@@ -47,6 +47,15 @@ public class CAConstants
         BEAN_FILM
     }
 
+    public static enum OPERA_TYPES
+    {
+        OPERA_DEFAULT,
+        OPERA_ARTICLE,
+        OPERA_MUSIC_SONG,
+        OPERA_MUSIC_ALBUM,
+        OPERA_FILM
+    }
+
     /* ********************************************************************* */
     /*                             DEFAULT VALUES                            */
     /* ********************************************************************* */
@@ -68,6 +77,7 @@ public class CAConstants
     public static final String DB_TABLE_NAME_AUTHOR_SINGLES         = "ca_authors";
     public static final String DB_TABLE_NAME_AUTHOR_GROUPS          = "ca_groups";
     public static final String DB_TABLE_NAME_AUTHOR_GROUPS_RELATION = "ca_group_author";
+    public static final String DB_TABLE_NAME_AUTHOR_OPERAS_RELATION = "ca_opera_author";
     public static final String DB_TABLE_NAME_OPERA_FILMS            = "ca_films";
     public static final String DB_TABLE_NAME_OPERA_ARTICLES         = "ca_articles";
     public static final String DB_TABLE_NAME_OPERA_MUSIC_SONGS      = "ca_music_songs";
@@ -75,6 +85,10 @@ public class CAConstants
 
     // names of the sequences
     public static final String DB_SEQUENCE_NAME_AUTHOR = "seq_author";
+    public static final String DB_SEQUENCE_NAME_OPERAS = "seq_operas";
+    public static final String DB_SEQUENCE_NAME_REL_AUTH_GROUP = "seq_rel_auth_group";
+    public static final String DB_SEQUENCE_NAME_REL_AUTH_OPERA = "seq_rel_auth_opera";
+
 
     // tables' definitions
 
@@ -96,4 +110,28 @@ public class CAConstants
     // Group-author relation
     public static final String DB_TABLE_COL_R_AUTH_GROUP_ID_GROUP  = "group_id";
     public static final String DB_TABLE_COL_R_AUTH_GROUP_ID_AUTHOR = "author_id";
+
+    // Opera-author relation
+    public static final String DB_TABLE_COL_R_AUTH_OPERA_ID_AUTH  = "author_id";
+    public static final String DB_TABLE_COL_R_AUTH_OPERA_ID_OPERA = "opera_id";
+
+    // Operas table
+    public static final String DB_TABLE_COL_OPERA_TITLE  = "opera_title";
+    public static final String DB_TABLE_COL_OPERA_TYPE   = "opera_type";
+    public static final String DB_TABLE_COL_OPERA_RATING = "opera_rating";
+
+    // Opera Articles table
+    public static final String DB_TABLE_COL_ARTICLES_LINK = "opera_article_httplink";
+
+    // Opera Music song table
+    public static final String DB_TABLE_COL_OPERA_MUSIC_SONG_TIME     = "opera_song_time";
+    public static final String DB_TABLE_COL_OPERA_MUSIC_SONG_CATEGORY = "opera_song_category";
+    public static final String DB_TABLE_COL_OPERA_MUSIC_SONG_LYRIC    = "opera_song_lyric";
+    public static final String DB_TABLE_COL_OPERA_MUSIC_SONG_ALBUM    = "opera_song_album";
+
+    // Opera Music album song table
+    public static final String DB_TABLE_COL_OPERA_MUSIC_ALBUM_TIME     = "opera_album_time";
+    public static final String DB_TABLE_COL_OPERA_MUSIC_ALBUM_YEAR     = "opera_album_year";
+    public static final String DB_TABLE_COL_OPERA_MUSIC_ALBUM_CATEGORY = "opera_album_category";
+
 }

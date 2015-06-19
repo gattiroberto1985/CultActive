@@ -23,8 +23,40 @@
  */
 package it.bob.apps.android.cultactive.beans.operas;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+import it.bob.apps.android.cultactive.utils.CAConstants;
+
 /**
  * Created by roberto on 16/06/15.
  */
-public class BeanOperaArticle {
+@DatabaseTable( tableName = CAConstants.DB_TABLE_NAME_OPERA_ARTICLES )
+public class BeanOperaArticle extends BeanOpera
+{
+
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_ARTICLES_LINK)
+    private String httpLink = CAConstants.DEFAULT_STRING_VALUE;
+
+    /* ********************************************************************* */
+    /*                             CONSTRUCTORS                              */
+    /* ********************************************************************* */
+
+    public BeanOperaArticle(String title, int rate, String httpLink)
+    {
+        super(title, CAConstants.OPERA_TYPES.OPERA_ARTICLE, rate);
+        this.setHttpLink(httpLink);
+    }
+
+
+    /* ********************************************************************* */
+    /*                       GETTER AND SETTER METHODS                       */
+    /* ********************************************************************* */
+
+    public String getHttpLink() {
+        return httpLink;
+    }
+
+    public void setHttpLink(String httpLink) {
+        this.httpLink = httpLink;
+    }
 }

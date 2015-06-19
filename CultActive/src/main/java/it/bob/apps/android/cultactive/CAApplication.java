@@ -30,6 +30,7 @@ import android.content.ContentResolver;
 /**
  *
  * This class extends the base Application android class.
+ *
  * Created by roberto on 14/06/15.
  */
 public class CAApplication extends Application
@@ -39,8 +40,10 @@ public class CAApplication extends Application
 
     public CAApplication getInstance() { return CAApplication.INSTANCE; }
 
+
     public ContentResolver getContentResolver()
     {
         return this.getApplicationContext().getContentResolver();
     }
+
 }

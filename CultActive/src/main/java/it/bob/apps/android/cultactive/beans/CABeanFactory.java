@@ -24,6 +24,9 @@
 package it.bob.apps.android.cultactive.beans;
 
 /**
+ *
+ * Factory class for the application beans.
+ *
  * Created by roberto on 16/06/15.
  */
 public class CABeanFactory {

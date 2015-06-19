@@ -23,8 +23,73 @@
  */
 package it.bob.apps.android.cultactive.beans.operas;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+import it.bob.apps.android.cultactive.utils.CAConstants;
+
 /**
  * Created by roberto on 16/06/15.
  */
-public class BeanOperaMusicSong {
+@DatabaseTable( tableName = CAConstants.DB_TABLE_NAME_OPERA_MUSIC_SONGS )
+public class BeanOperaMusicSong extends BeanOpera
+{
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_OPERA_MUSIC_SONG_TIME)
+    private int time = CAConstants.DEFAULT_INT_VALUE;
+
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_OPERA_MUSIC_SONG_CATEGORY)
+    private String category = CAConstants.DEFAULT_STRING_VALUE;
+
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_OPERA_MUSIC_SONG_LYRIC)
+    private String lyric = CAConstants.DEFAULT_STRING_VALUE;
+
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_OPERA_MUSIC_SONG_ALBUM, foreign = true, foreignAutoRefresh = true )
+    private BeanOperaMusicAlbum album;
+
+    /* ********************************************************************* */
+    /*                             CONSTRUCTORS                              */
+    /* ********************************************************************* */
+
+    public BeanOperaMusicSong(String title, int rate, int time, String category, String lyric, BeanOperaMusicAlbum album)
+    {
+        super(title, CAConstants.OPERA_TYPES.OPERA_MUSIC_SONG, rate);
+        this.setTime(time);
+        this.setCategory(category);
+        this.setLyric(lyric);
+        this.setAlbum(album);
+    }
+
+
+    /* ********************************************************************* */
+    /*                       GETTER AND SETTER METHODS                       */
+    /* ********************************************************************* */
+
+
+    public int getTime() {
+        return time;
+    }
+
+    public void setTime(int time) {
+        this.time = time;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getLyric() {
+        return lyric;
+    }
+
+    public void setLyric(String lyric) {
+        this.lyric = lyric;
+    }
+
+    public BeanOperaMusicAlbum getAlbum() { return this.album; }
+
+    public void setAlbum(BeanOperaMusicAlbum album) { this.album = album; }
+
 }

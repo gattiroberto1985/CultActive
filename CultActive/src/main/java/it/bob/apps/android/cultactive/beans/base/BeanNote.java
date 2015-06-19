@@ -48,7 +48,7 @@ public class BeanNote implements Serializable
     @DatabaseField(columnName = CAConstants.DB_TABLE_COL_NOTES_BEAN_TYPE)
     private CAConstants.BEAN_TYPES type;
 
-    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_NOTES_BEAN_ID, foreign = true )
+    @DatabaseField(columnName = CAConstants.DB_TABLE_COL_NOTES_BEAN_ID, foreign = true, foreignAutoRefresh = true )
     private BaseCABean bean;
 
     @DatabaseField(columnName = CAConstants.DB_TABLE_COL_NOTES_TEXT)

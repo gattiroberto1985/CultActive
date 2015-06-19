@@ -2,6 +2,7 @@
 
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+import it.bob.apps.android.cultactive.beans.authors.BeanAuthorGroup;
 import it.bob.apps.android.cultactive.beans.authors.BeanAuthorSingle;
 import it.bob.apps.android.cultactive.beans.base.BaseCABean;
 import it.bob.apps.android.cultactive.utils.CAConstants;
@@ -18,8 +19,11 @@ import it.bob.apps.android.cultactive.utils.CAConstants;
 public class BeanRelAuthorGroup extends BaseCABean
 {
 
+    @DatabaseField( columnName = CAConstants.DB_TABLE_COL_DEFAULT_ID, generatedIdSequence = CAConstants.DB_SEQUENCE_NAME_REL_AUTH_GROUP)
+    private int id;
+
     @DatabaseField(columnName = CAConstants.DB_TABLE_COL_R_AUTH_GROUP_ID_GROUP, foreign = true, foreignAutoRefresh = true)
-    private BeanRelAuthorGroup group;
+    private BeanAuthorGroup group;
 
     @DatabaseField(columnName = CAConstants.DB_TABLE_COL_R_AUTH_GROUP_ID_AUTHOR, foreign = true, foreignAutoRefresh = true)
     private BeanAuthorSingle author;
@@ -34,12 +38,21 @@ public class BeanRelAuthorGroup extends BaseCABean
     /*                       GETTER AND SETTER METHODS                       */
     /* ********************************************************************* */
 
-    public BeanRelAuthorGroup getGroup() { return group; }
+    public BeanAuthorGroup getGroup() { return group; }
 
-    public void setGroup(BeanRelAuthorGroup group) { this.group = group; }
+    public void setGroup(BeanAuthorGroup group) { this.group = group; }
 
     public BeanAuthorSingle getAuthor() { return author; }
 
     public void setAuthor(BeanAuthorSingle author) { this.author = author; }
 
+    @Override
+    public int getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(int id) {
+        this.id = id;
+    }
 }
