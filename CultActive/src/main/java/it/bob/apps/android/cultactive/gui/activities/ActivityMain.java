@@ -30,7 +30,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import it.bob.apps.android.cultactive.R;
 
-public class ActivityCAMain extends Activity {
+public class ActivityMain extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
