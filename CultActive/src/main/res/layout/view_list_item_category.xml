@@ -1,7 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    This view contains an item of the first list of the application.
+    Here the user can select the "category" of the item (e. g. book,
+    music, ...). The single item view should also presents the number
+    of the reviews contained and the average rate.
+
+  -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
+
+    <!-- The label of the view -->
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_list_item_category_label"/>
+
+    <!-- The counter, which presents the number of reviews contained
+         in the category of object -->
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_list_item_category_counter"/>
+
+    <!-- The average rate of the reviews contained -->
+    <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/view_list_item_category_avg_rate"/>
 
 </LinearLayout>

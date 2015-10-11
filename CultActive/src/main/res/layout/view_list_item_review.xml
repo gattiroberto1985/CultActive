@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+
+    This view contains the short data of a review. It presents the
+    author, the status of the review. the rating, the title and
+    the first string of the review.
+    By tapping on the author, the user can reach a view with the
+    data of the author (@see fragment_author_detail).
+
+  -->
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
+    <TextView
+            android:id="@+id/view_list_item_review_author"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <Spinner
+            android:id="@+id/view_list_item_review_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <RatingBar
+            android:id="@+id/view_list_item_review_rate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/view_list_item_review_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/view_list_item_review_maintext"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
 
 </LinearLayout>

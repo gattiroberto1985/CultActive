@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    Splash activity. Nothing to show, except for an icon for a short
+    amount of time (1 sec. ? ). See activity class in
+    it.bob.apps.android.cultactive.gui.activities.ActivitySplash
+    .
+ -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"

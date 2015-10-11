@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+<!--
+    This view contains the details of a single review. It contains the full
+    details of the reviews, presenting two different sub-view.
+
+    The first is a sort of header, with the common details of the review,
+    such as author, rate, title and status. This header can be hidden in
+    a way similar to the ExpandableListView.
+
+    The second part of the view, shows the text of the review and the list
+    of all the notes relative to it.
+-->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+
+
+    <TextView
+            android:id="@+id/view_detail_review_author"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <Spinner
+            android:id="@+id/view_detail_review_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <RatingBar
+            android:id="@+id/view_detail_review_rate"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView
+            android:id="@+id/view_detail_review_title"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+    <!-- TODO: insert description textbox -->
+
+    <!-- TODO: insert note handlers .
+            E. g.: a separate layout with gridview? -->
 
 </LinearLayout>
