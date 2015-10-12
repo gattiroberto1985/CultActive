@@ -1,0 +1,11 @@
+Application views
+
+ - home screen, with sections of reviews (e. g. work in progress, best rating, ...) and
+   access to all the object category (e. g. books, music, ...)
+ - Object category view, with filters to reduce the number of reviews shown;
+ - Object detail, fr saving
+ - List of photos, uncategorized
+ - Photo detail view (from which we can save and share)
+ - List of all saved items
+ - List of saved photos
+ - List of saved stories
